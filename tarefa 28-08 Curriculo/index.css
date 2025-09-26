@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,165 +6,109 @@
 }
 
 body {
-  background-color: #e6f0ff; /* Azul claro */
-  color: #0d1b2a; /* Azul escuro para contraste */
+  background-color: #e6f0ff;
+  color: #0d1b2a;
   line-height: 1.6;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Container central para melhor controle de Box Model */
-body > header,
-body > main,
-body > footer {
-  width: 90%;
-  max-width: 900px;
-  margin: 20px auto; /* Centraliza horizontalmente e dá espaçamento */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Cabeçalho */
-header {
+/* HEADER */
+.header {
   background: linear-gradient(135deg, #0077b6, #023e8a);
-  color: #ffffff;
-  text-align: center;
+  color: #fff;
+  padding: 20px;
   border-bottom: 4px solid #90e0ef;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px;
 }
 
-header h2 {
-  font-size: 1.5rem;
+.info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.info h2 {
+  font-size: 1.2rem;
   font-weight: 500;
+}
+
+.contact {
+  text-align: right;
+}
+
+.contact h3 {
+  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
-header h3 {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  font-weight: 600;
+/* MAIN */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-header p {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 3px 0;
-}
-
-/* Conteúdo principal */
-main {
-  background-color: #ffffff;
+.sobre, .experiencia {
+  background: #fff;
   border: 2px solid #0077b6;
-  padding: 25px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-main h2 {
+.sobre h2, .experiencia h2 {
   color: #023e8a;
-  font-size: 1.8rem;
-  font-weight: 600;
   margin-bottom: 10px;
-  border-left: 5px solid #0077b6;
-  padding-left: 10px;
 }
 
-main p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  text-align: justify;
-  padding: 5px 0;
-}
-
-/* Rodapé */
-footer {
+/* RODAPÉ */
+.footer {
   background-color: #023e8a;
-  color: #ffffff;
+  color: #fff;
   padding: 15px;
-  font-size: 0.9rem;
-  font-weight: 500;
   text-align: center;
   border-top: 4px solid #90e0ef;
 }
 
-/* Links extras */
-a {
-  color: #0077b6;
-  text-decoration: none;
-  font-weight: bold;
+/* FORMULÁRIO */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a:hover {
-  color: #023e8a;
-  text-decoration: underline;
-}
-
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-  body > header,
-  body > main,
-  body > footer {
-    width: 95%;
-    padding: 15px;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header h2 {
-    font-size: 1.3rem;
-  }
-
-  main h2 {
-    font-size: 1.5rem;
-  }
-
-  main p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  header h2 {
-    font-size: 1.1rem;
-  }
-
-  main h2 {
-    font-size: 1.3rem;
-  }
-
-  main p {
-    font-size: 0.9rem;
-  }
-
-
-  form {
-  background-color: #ffffff;
+.form {
+  background: #fff;
   border: 2px solid #0077b6;
-  padding: 25px;
   border-radius: 10px;
+  padding: 25px;
   max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .form-group {
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 label {
   font-weight: 600;
-  margin-bottom: 5px;
   color: #023e8a;
 }
 
@@ -173,7 +116,6 @@ input, textarea {
   padding: 10px;
   border: 1px solid #90e0ef;
   border-radius: 5px;
-  font-size: 1rem;
 }
 
 input:focus, textarea:focus {
@@ -182,19 +124,37 @@ input:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(0,119,182,0.5);
 }
 
-button {
-  background-color: #0077b6;
-  color: #ffffff;
-  padding: 12px 20px;
-  border: none;
+/* BOTÕES */
+.btn {
+  display: inline-block;
+  background: #0077b6;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 1rem;
+  transition: 0.3s;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #023e8a;
+.btn:hover {
+  background: #023e8a;
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact {
+    text-align: center;
+  }
+
+  .info h1 {
+    font-size: 1.8rem;
+  }
 }

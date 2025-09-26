@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <header>
-    <h1>Formulário de Contato</h1>
-    <p><a href="curriculoo.html">← Voltar ao currículo</a></p>
+  <header class="header">
+    <div class="header-content">
+      <h1>Formulário de Contato</h1>
+      <p><a href="curriculoo.html" class="btn">← Voltar ao currículo</a></p>
+    </div>
   </header>
 
-  <main>
-    <form action="#" method="post">
+  <main class="main flex-center">
+    <form action="#" method="post" class="form">
       <div class="form-group">
         <label for="nome">Nome completo:</label>
         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
@@ -34,11 +36,11 @@
         <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
       </div>
 
-      <button type="submit">Enviar</button>
+      <button type="submit" class="btn">Enviar</button>
     </form>
   </main>
 
-  <footer>
+  <footer class="footer">
     João Vitor Nogueira da Silva. 2025
   </footer>
 </body>
